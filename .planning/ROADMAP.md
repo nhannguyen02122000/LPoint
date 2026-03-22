@@ -277,7 +277,7 @@ Phase 8 (after Phase 7, before Phase 6 redeem)   Phase 9
 
 | # | Phase | Status | Plans Done |
 |---|-------|--------|------------|
-| 1 | Foundation | 🟡 In Progress | 01/?? |
+| 1 | Foundation | 🟡 In Progress | 03/05 |
 | 2 | RBAC Enforcement | ⬜ Not Started | — |
 | 3 | Points Engine | ⬜ Not Started | — |
 | 4 | Core API Routes | ⬜ Not Started | — |
