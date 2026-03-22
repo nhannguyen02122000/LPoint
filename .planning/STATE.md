@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_phase: 01 (Foundation)
-current_plan: 03
+current_plan: 05
 status: executing
-last_updated: "2026-03-22T08:43:08Z"
+last_updated: "2026-03-22T08:45:11Z"
 progress:
   total_phases: 1
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 4
+  total_plans: 5
+  completed_plans: 5
 ---
 
 # LPoint v1 — State
@@ -26,7 +26,7 @@ progress:
 
 ```
 Current Phase: 01 (Foundation)
-Current Plan:  04
+Current Plan:  05
 Status:        In Progress
 ```
 
@@ -77,7 +77,7 @@ All 10 phases must reach `⬜ Done` status.
 ## Last Completed
 
 ```
-Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Clerk auth) — 2026-03-22 | Plan 03-PLAN-instantdb-schema (InstantDB Schema) — 2026-03-22
+Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Clerk auth) — 2026-03-22 | Plan 03-PLAN-instantdb-schema (InstantDB Schema) — 2026-03-22 | Plan 04-PLAN-clerk-webhook (Clerk Webhook) — 2026-03-22
 ```
 
 ---
@@ -85,6 +85,9 @@ Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Cler
 ## Key Decisions
 
 - "CLERK_WEBHOOK_SIGNING_SECRET deferred — placeholder in .env.example until webhook is configured in Clerk Dashboard"
+- "Webhook route uses @clerk/nextjs/api/webhooks verifyWebhook (Clerk's Svix wrapper, no raw svix needed)"
+- "Webhook returns 200 on success to prevent Clerk retry storms; InstantDB writes stubbed for Phase 4"
+- "middleware.ts created to exclude /api/auth/webhook from Clerk auth protection (was missing prerequisite for Plan 04)"
 - "CRON_SECRET added upfront in .env.example — Phase 9 cron will use it without additional env var work later"
 - "middleware.ts at project root (not src/) — required by Next.js convention for edge middleware"
 - ".env.example force-added to git — intentionally tracked despite .gitignore `.env*` pattern"
