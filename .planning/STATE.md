@@ -82,6 +82,13 @@ Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Cler
 
 ---
 
+## Key Decisions
+
+- "CLERK_WEBHOOK_SIGNING_SECRET deferred — placeholder in .env.example until webhook is configured in Clerk Dashboard"
+- "CRON_SECRET added upfront in .env.example — Phase 9 cron will use it without additional env var work later"
+- "middleware.ts at project root (not src/) — required by Next.js convention for edge middleware"
+- ".env.example force-added to git — intentionally tracked despite .gitignore `.env*` pattern"
+
 ## Notes
 
 - Parallelization: Phases 4 and 7 can be built concurrently after Phase 3. Phases 5 and 9 can be built concurrently after Phase 4. Phase 10 can be built alongside Phase 6 after Phase 4.
