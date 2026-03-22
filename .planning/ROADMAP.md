@@ -270,3 +270,22 @@ Phase 8 (after Phase 7, before Phase 6 redeem)   Phase 9
 
 *Roadmap created: 2026-03-22*
 *Phases: 10 | Requirements mapped: 17/17*
+
+---
+
+## Execution Status
+
+| # | Phase | Status | Plans Done |
+|---|-------|--------|------------|
+| 1 | Foundation | 🟡 In Progress | 01/?? |
+| 2 | RBAC Enforcement | ⬜ Not Started | — |
+| 3 | Points Engine | ⬜ Not Started | — |
+| 4 | Core API Routes | ⬜ Not Started | — |
+| 5 | Staff Customer Ops | ⬜ Not Started | — |
+| 6 | Staff Earn & Redeem | ⬜ Not Started | — |
+| 7 | Menu Management | ⬜ Not Started | — |
+| 8 | Tier Config | ⬜ Not Started | — |
+| 9 | Expiry Cron | ⬜ Not Started | — |
+| 10 | Admin Dashboard | ⬜ Not Started | — |
+
+*Roadmap updated: 2026-03-22*
