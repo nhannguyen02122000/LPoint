@@ -13,10 +13,12 @@ updated: 2026-03-22T08:50:00Z
 
 ## Current Test
 
-number: 1
-name: Cold Start — App Builds
+[testing paused — 4 items blocked by Clerk Dashboard setup]
+
+number: 8
+name: Clerk Dashboard Setup Guide
 expected: |
-  Run `npm run build`. The Next.js app compiles without TypeScript errors, ESLint errors, or missing dependency errors. ClerkProvider, middleware, and InstantDB client initialize correctly.
+  `01-SETUP-GUIDE.md` exists in the phase directory. It lists the 7 steps to configure Clerk (disable sign-up methods, create ADMIN/STAFF users, configure webhook, add env vars).
 
 await: user response
 
@@ -32,46 +34,54 @@ severity: minor
 ### 2. Clerk Sign-In Page Loads
 expected: |
   Visit `/sign-in` (with Clerk keys configured in `.env.local`). Clerk hosted sign-in form renders. User can enter username and password. Sign-up link redirects to `/sign-in` (not to a Clerk sign-up form).
-result: [pending]
+result: pass
 
 ### 3. /sign-up Redirects
 expected: |
   Visit `/sign-up`. Browser immediately redirects to `/sign-in`. No Clerk sign-up form is shown.
-result: [pending]
+result: pass
 
 ### 4. lib/auth.ts Helpers Exist
 expected: |
   `src/lib/auth.ts` exports `getSession()`, `requireAuth()`, and `requireRole()`. Each function exists and has correct Clerk v7 pattern (`auth()` from `@clerk/nextjs/server`, `sessionClaims.public_metadata.role`).
-result: [pending]
+result: blocked
+blocked_by: third-party
+reason: "Cannot verify — Clerk keys not configured in .env.local yet"
 
 ### 5. middleware.ts Protects Routes
 expected: |
   `middleware.ts` exists at project root. It protects all routes except `/api/auth/webhook`. Unauthenticated requests to any other route redirect to Clerk sign-in.
-result: [pending]
+result: pass
 
 ### 6. InstantDB Schema Pushed
 expected: |
   `src/lib/schema.ts` defines all 6 entities (USERS, CUSTOMER, TRANSACTION, TIER, EXPIRY_LOG, MENU_ITEM). `schema-version.txt` exists with a version number. Schema was pushed to InstantDB app `f843f303-5ab1-48aa-bddb-9f9ea9a2fdb6`.
-result: [pending]
+result: blocked
+blocked_by: third-party
+reason: "Cannot verify — Clerk keys not configured in .env.local yet"
 
 ### 7. Webhook Handler at /api/auth/webhook
 expected: |
   `src/app/api/auth/webhook/route.ts` exists. It verifies Svix signature headers (`svix-id`, `svix-timestamp`, `svix-signature`). It handles `user.created`, `user.updated`, `user.deleted` events. Returns 200 on success.
-result: [pending]
+result: blocked
+blocked_by: third-party
+reason: "Cannot verify — Clerk keys not configured in .env.local yet"
 
 ### 8. Clerk Dashboard Setup Guide
 expected: |
   `01-SETUP-GUIDE.md` exists in the phase directory. It lists the 7 steps to configure Clerk (disable sign-up methods, create ADMIN/STAFF users, configure webhook, add env vars).
-result: [pending]
+result: blocked
+blocked_by: third-party
+reason: "Cannot verify — Clerk keys not configured in .env.local yet"
 
 ## Summary
 
 total: 8
-passed: 0
+passed: 3
 issues: 1
-pending: 7
+pending: 0
 skipped: 0
-blocked: 0
+blocked: 4
 
 ## Gaps
 
