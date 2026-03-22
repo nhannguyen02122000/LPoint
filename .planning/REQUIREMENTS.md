@@ -88,30 +88,46 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| SYNC-01 | — | Pending |
-| RBAC-01 | — | Pending |
-| RBAC-02 | — | Pending |
-| CUST-01 | — | Pending |
-| CUST-02 | — | Pending |
-| CUST-03 | — | Pending |
-| CUST-04 | — | Pending |
-| MENU-01 | — | Pending |
-| MENU-02 | — | Pending |
-| POIN-01 | — | Pending |
-| POIN-02 | — | Pending |
-| POIN-03 | — | Pending |
-| POIN-04 | — | Pending |
-| POIN-05 | — | Pending |
-| DASH-01 | — | Pending |
-| PROG-01 | — | Pending |
+| AUTH-01 | Phase 1 — Foundation | ⬜ Not Started |
+| AUTH-02 | Phase 1 — Foundation | ⬜ Not Started |
+| SYNC-01 | Phase 4 — Core API Routes | ⬜ Not Started |
+| RBAC-01 | Phase 2 — RBAC Enforcement | ⬜ Not Started |
+| RBAC-02 | Phase 2 — RBAC Enforcement | ⬜ Not Started |
+| CUST-01 | Phase 5 — Staff Customer Ops UI | ⬜ Not Started |
+| CUST-02 | Phase 5 — Staff Customer Ops UI | ⬜ Not Started |
+| CUST-03 | Phase 5 — Staff Customer Ops UI | ⬜ Not Started |
+| CUST-04 | Phase 5 — Staff Customer Ops UI | ⬜ Not Started |
+| MENU-01 | Phase 7 — Menu Management UI | ⬜ Not Started |
+| MENU-02 | Phase 7 — Menu Management UI | ⬜ Not Started |
+| POIN-01 | Phase 3 — Points Engine + Phase 4 — Core API Routes + Phase 6 — Staff Earn & Redeem UI | ⬜ Not Started |
+| POIN-02 | Phase 8 — Tier Configuration UI | ⬜ Not Started |
+| POIN-03 | Phase 6 — Staff Earn & Redeem UI | ⬜ Not Started |
+| POIN-04 | Phase 9 — Expiry Cron & Logs | ⬜ Not Started |
+| POIN-05 | Phase 3 — Points Engine + Phase 4 — Core API Routes + Phase 6 — Staff Earn & Redeem UI | ⬜ Not Started |
+| DASH-01 | Phase 10 — Admin Dashboard & Program Mgmt | ⬜ Not Started |
+| PROG-01 | Phase 10 — Admin Dashboard & Program Mgmt | ⬜ Not Started |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17/17 ✅
+- Unmapped: 0 ✅
 
 ---
+
+## Phase Map
+
+```
+Phase 1  ──► Phase 2 ──► Phase 3 ──► Phase 4 ──► Phase 5 ──► Phase 6
+                            │
+                     Phase 7 (parallel with Phase 4)
+                                             │
+Phase 8, Phase 9                          Phase 10 ◄── Phase 9
+(independent)                                    │
+                                                  │
+                                           Phase 6 (parallel)
+```
+
+---
+
 *Requirements defined: 2026-03-22*
-*Last updated: 2026-03-22 after initial definition*
+*Last updated: 2026-03-22 after roadmap creation — traceability added*
