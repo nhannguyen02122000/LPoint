@@ -1,4 +1,4 @@
-import { init_schema, i } from '@instantdb/react'
+import { init, i } from '@instantdb/react'
 import schema from './schema'
 
 // Initialize InstantDB with the schema.
@@ -17,6 +17,6 @@ if (!APP_ID) {
   )
 }
 
-const db = init_schema({ appId: APP_ID, schema })
+const db = init({ appId: APP_ID, schema })
 
 export default db

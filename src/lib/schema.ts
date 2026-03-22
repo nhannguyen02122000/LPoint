@@ -1,7 +1,6 @@
 import { i } from '@instantdb/react'
 
 const schema = i.schema({
-  version: 1,
   entities: {
     // Mirrors Clerk user record for webhook sync
     USERS: i.entity({

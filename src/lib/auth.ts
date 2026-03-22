@@ -14,7 +14,8 @@ export interface Session {
  */
 export async function getSession(): Promise<Session> {
   const { userId, sessionClaims } = await auth()
-  const role = (sessionClaims?.public_metadata?.role as Role) ?? undefined
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const role = ((sessionClaims as { public_metadata?: { role?: Role } })?.public_metadata?.role) ?? undefined
   return { userId: userId ?? '', role }
 }
 
@@ -38,11 +39,11 @@ export async function requireAuth(): Promise<Session> {
  */
 export async function requireRole(role: Role): Promise<Session> {
   const session = await getSession()
-  if (session.userId && session.role !== role) {
+  if (!session.userId || session.role !== role) {
     return NextResponse.json(
       { error: `Forbidden: requires ${role} role` },
       { status: 403 }
-    )
+    ) as unknown as Session
   }
   return session
 }
