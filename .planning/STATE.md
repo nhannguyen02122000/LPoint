@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_phase: 01 (Foundation)
-current_plan: 02
+current_plan: 03
 status: executing
-last_updated: "2026-03-22T08:40:12.543Z"
+last_updated: "2026-03-22T08:43:08Z"
 progress:
-  total_phases: 10
+  total_phases: 1
   completed_phases: 0
   total_plans: 0
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # LPoint v1 — State
@@ -26,7 +26,7 @@ progress:
 
 ```
 Current Phase: 01 (Foundation)
-Current Plan:  02
+Current Plan:  04
 Status:        In Progress
 ```
 
@@ -77,7 +77,7 @@ All 10 phases must reach `⬜ Done` status.
 ## Last Completed
 
 ```
-Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Clerk auth) — 2026-03-22
+Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Clerk auth) — 2026-03-22 | Plan 03-PLAN-instantdb-schema (InstantDB Schema) — 2026-03-22
 ```
 
 ---
@@ -88,6 +88,9 @@ Plan 01-PLAN-01 (packages-config) — 2026-03-22 | Plan 02-PLAN-clerk-auth (Cler
 - "CRON_SECRET added upfront in .env.example — Phase 9 cron will use it without additional env var work later"
 - "middleware.ts at project root (not src/) — required by Next.js convention for edge middleware"
 - ".env.example force-added to git — intentionally tracked despite .gitignore `.env*` pattern"
+- "InstantDB CLI is `instant-cli` (npm package), not `instantdb` or `@instantdb/cli`"
+- "InstantDB v0.22.169 does not support `.default()` on attributes; defaults handled in application code"
+- "instant-cli requires `--yes` for non-interactive push; requires `instant.schema.ts` at project root"
 
 ## Notes
 
